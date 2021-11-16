@@ -1,23 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
+    <Version>1.2.0.1</Version>
+    <LangVersion>latest</LangVersion>
     <PlatformTarget>x64</PlatformTarget>
     <Platforms>x64;AnyCPU</Platforms>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OutputPath>C:\Games\Plugins\SkipCutscene\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+      <DalamudLibPath>$(AppData)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dalamud">
-      <HintPath>..\Lib\Dalamud\Dalamud.dll</HintPath>
-      <Private>False</Private>
+        <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
+        <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DalamudPackager" Version="2.1.2" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.246501">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
+    <PackageReference Include="DalamudPackager" Version="2.1.4" />
   </ItemGroup>
 </Project>
